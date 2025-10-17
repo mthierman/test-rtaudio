@@ -19,5 +19,12 @@ auto wmain() -> int {
     std::println("Name: {} - Display Name: {}", display_name, name);
   }
 
+  auto asio{std::make_unique<RtAudio>(RtAudio::Api::WINDOWS_ASIO)};
+
+  if (asio) {
+    std::println(
+        "std::make_unique<RtAudio>(RtAudio::Api::WINDOWS_ASIO) success");
+  }
+
   return 0;
 }
